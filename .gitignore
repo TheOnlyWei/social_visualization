@@ -55,5 +55,5 @@ typings/
 # dotenv environment variables file
 .env
 
-#ignore key
+# ignore config.js
 /config.js

@@ -55,10 +55,19 @@ function getTweetSample() {
     T.get('search/tweets', getParams, gotData), 5000;
 }
 
-setInterval(function(){checkLimit('search');}, 1000*10);
+//setInterval(function(){checkLimit('search');}, 1000*10);
 //checkLimit('search'); //gets how many API calls you have left for the current 15 minutes
 
-
+////////////////
+//   STREAM
+////////////////
+//filter public stream by English tweets containing #apple
+var stream = T.stream('statuses/filter', {track: '#apple', language: 'en'});
+//whenever there is a tweet with the above stream parameters, the callback
+//function is executed
+stream.on('tweet', function(tweet) {
+  console.log(tweet);
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

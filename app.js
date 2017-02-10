@@ -4,16 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var twit = require('twit'); //module for interacting with Twitter API
-var config = require('./config/config') //config.js contains keys for twitter API access
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
 
-var twitConfig = twit(config); //twitter config
-console.log('working');
+console.log('Running Social Visualization...');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

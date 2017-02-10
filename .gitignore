@@ -56,4 +56,4 @@ typings/
 .env
 
 #ignore key
-config.js
+/config.js

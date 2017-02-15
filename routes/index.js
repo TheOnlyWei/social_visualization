@@ -32,6 +32,7 @@ function checkLimit(key) {
 //always initialize variable, otherwise they are undefined variables
 var tweetData = [];
 //sample Twitter API function to get tweet broken down into its components
+//adds one tweet to twitter.movies collection in mongoDB each time it is called
 function getTweetSample() {
     //q is the query term parameter
     //get 10 latest tweets since 2011-11-11
@@ -80,10 +81,6 @@ function getTweetSample() {
 
 //updates one tweet over and over again.
 function updateTweetSample() {
-    //q is the query term parameter
-    //get 10 latest tweets since 2011-11-11
-    //go to the below link for a list of search params
-    //https://dev.twitter.com/rest/reference/get/search/tweets
     var getParams = {
       q: 'movie since:2011-11-11',
       count: 1
@@ -103,21 +100,11 @@ function updateTweetSample() {
           collection.update({}, data, {upsert:true});
           db.close();
         }
-
       });
-      /*
-      tweets.forEach(function(t){
-        tweetData.push(t.text);
-        console.log('TWEET: ' + t.text);
-      });
-      console.log(data);
-      */
     };
-    //search request
-    //params: what to search for
-    //gotData: callback function called once data is retrieved
     T.get('search/tweets', getParams, gotData);
 }
+
 
 
 getTweetSample();

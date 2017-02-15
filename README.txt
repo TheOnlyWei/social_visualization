@@ -6,16 +6,22 @@ Social Media Visualization Using Twitter
 	Create: config/config.js with the following code
 
 	module.exports = {
-	  consumer_key:         '...',
-	  consumer_secret:      '...',
-	  access_token:         '...',
-	  access_token_secret:  '...',
-	  timeout_ms:           60*1000,  
+		twitter: {
+		  consumer_key:         '...',
+		  consumer_secret:      '...',
+		  access_token:         '...',
+		  access_token_secret:  '...',
+		  timeout_ms:           60*1000,  
+		},
+		mongodb: {
+		  url: 'mongodb://localhost:27017/twitter'
+		}
 	}
 
 
 	Visit the below link to get all four keys:
-		https://apps.twitter.com/
+	https://apps.twitter.com/
+
 	Then copy and paste them into your config/config.js file
 	by replacing '...' with Twitter keys within quotes.
 	

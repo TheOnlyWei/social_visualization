@@ -1,6 +1,9 @@
 extends layout
 
 block content
+  span Search
+  Span &nbsp;
+  input#search_input(type="text",placeholder="search",name="search")
   h1= title
   p Welcome to #{title}
   ul
